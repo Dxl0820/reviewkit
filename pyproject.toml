@@ -1,0 +1,38 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "reviewkit"
+version = "0.1.0"
+description = "AI-powered code review CLI tool for GitHub PRs"
+readme = "README.md"
+license = "MIT"
+requires-python = ">=3.9"
+authors = [{ name = "reviewkit" }]
+keywords = ["code-review", "cli", "github", "ai", "security"]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Topic :: Software Development :: Quality Assurance",
+]
+dependencies = [
+    "click>=8.0",
+    "requests>=2.28",
+    "rich>=13.0",
+    "gitpython>=3.1",
+]
+
+[project.scripts]
+reviewkit = "reviewkit.cli:main"
+
+[project.urls]
+Homepage = "https://github.com/reviewkit/reviewkit"
+Documentation = "https://github.com/reviewkit/reviewkit#readme"
+Repository = "https://github.com/reviewkit/reviewkit"
+Issues = "https://github.com/reviewkit/reviewkit/issues"
+
+[tool.hatch.build.targets.wheel]
+packages = ["reviewkit"]
